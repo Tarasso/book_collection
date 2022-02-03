@@ -47,6 +47,11 @@ class BooksController < ApplicationController
     end
   end
 
+  def delete
+    set_book
+
+  end
+
   # DELETE /books/1 or /books/1.json
   def destroy
     @book.destroy
@@ -65,6 +70,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title)
+      params.require(:book).permit(:title, :author, :price, :pDate)
     end
 end
