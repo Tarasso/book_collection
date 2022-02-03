@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :pDate, "Published Date" %>
-    <%= form.date_select :pDate, {order: [:month, :day, :year], prompt: { day: 'day', month: 'month', year: 'year' }}%>
+    <%= form.date_select :pDate, order: [:month, :day, :year], prompt: { day: 'day', month: 'month', year: 'year' }, start_year: Date.current.year, end_year: 1700%>
   </div>
 
   <div class="actions">
