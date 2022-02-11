@@ -1,6 +1,9 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+
+  config.web_console.permissions = '172.17.0.1'
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -69,8 +72,13 @@ Rails.application.configure do
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
-  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+
+  ENV['GOOGLE_OAUTH_CLIENT_ID'] = '340193228208-0hlundlqepjdd3uuhabberjcrbhgnq4m.apps.googleusercontent.com'
+  ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
+
 end
